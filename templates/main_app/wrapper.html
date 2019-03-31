@@ -31,8 +31,57 @@
 <hr>
 
 <div class="container">
-    {% block settings %}
-    {% endblock %}
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="well">
+                <h2>Filters</h2>
+                <br>
+                <h5>Date</h5>
+                <form class="form-inline" action="/action_page.php">
+                    <div class="form-group">
+                        <label>From: </label>
+                        <input type="date" class="form-control" id="date_from" placeholder="Enter from date"
+                               name="date_from">
+                    </div>
+                    <div class="form-group">
+                        <label> To: </label>
+                        <input type="date" class="form-control" id="date_to" placeholder="Enter to date" name="date_to">
+                    </div>
+                </form>
+
+                <br>
+
+                <h5>Time</h5>
+                <form class="form-inline" action="/action_page.php">
+                    <div class="form-group">
+                        <label>From: </label>
+                        <input type="time" class="form-control" id="time_from" placeholder="Enter from time"
+                               name="time_from">
+                    </div>
+                    <div class="form-group">
+                        <label>To: </label>
+                        <input type="time" class="form-control" id="time_to" placeholder="Enter to time" name="time_to">
+                    </div>
+                </form>
+
+                <br>
+                <h5>Travel points</h5>
+                <form class="form-inline" action="/action_page.php">
+                    <div class="form-group">
+                        <input type="search" class="form-control" id="from" placeholder="Departure" name="from">
+                    </div>
+                    <div class="form-group">
+                        <input type="search" class="form-control" id="to" placeholder="Destination" name="to">
+                    </div>
+                </form>
+                <br>
+                <button type="submit" class="btn btn-success"> find</button>
+                <br>
+                <br>
+
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
