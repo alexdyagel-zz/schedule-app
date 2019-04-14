@@ -6,20 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Schedule</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
     {% load staticfiles %}
-
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 </head>
+
 
 <body>
 <div class="jumbotron">
@@ -29,59 +19,7 @@
     </div>
 </div>
 <hr>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="well">
-                <h2>Filters</h2>
-                <br>
-                <h5>Date</h5>
-                <form class="form-inline" action="/action_page.php">
-                    <div class="form-group">
-                        <label>From: </label>
-                        <input type="date" class="form-control" id="date_from" placeholder="Enter from date"
-                               name="date_from">
-                    </div>
-                    <div class="form-group">
-                        <label> To: </label>
-                        <input type="date" class="form-control" id="date_to" placeholder="Enter to date" name="date_to">
-                    </div>
-                </form>
-
-                <br>
-
-                <h5>Time</h5>
-                <form class="form-inline" action="/action_page.php">
-                    <div class="form-group">
-                        <label>From: </label>
-                        <input type="time" class="form-control" id="time_from" placeholder="Enter from time"
-                               name="time_from">
-                    </div>
-                    <div class="form-group">
-                        <label>To: </label>
-                        <input type="time" class="form-control" id="time_to" placeholder="Enter to time" name="time_to">
-                    </div>
-                </form>
-
-                <br>
-                <h5>Travel points</h5>
-                <form class="form-inline" action="/action_page.php">
-                    <div class="form-group">
-                        <input type="search" class="form-control" id="from" placeholder="Departure" name="from">
-                    </div>
-                    <div class="form-group">
-                        <input type="search" class="form-control" id="to" placeholder="Destination" name="to">
-                    </div>
-                </form>
-                <br>
-                <button type="submit" class="btn btn-success"> find</button>
-                <br>
-                <br>
-
-            </div>
-        </div>
-    </div>
-</div>
+{% block filter %}
+{% endblock %}
 </body>
 </html>

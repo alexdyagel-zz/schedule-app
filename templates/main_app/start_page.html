@@ -1,12 +1,12 @@
 {% extends "main_app/wrapper.html" %}
-{% load staticfiles %}
 
 {% block content %}
+    {% load staticfiles %}
     <img src="{% static 'images/schedule.jpg' %}" class="img-thumbnail">
 
     <p align="center">
-        <a href="/train" class="btn btn-info btn-lg">Train Schedule</a>
         <a href="/bus" class="btn btn-info btn-lg">Bus Schedule</a>
+        <a href="/train" class="btn btn-info btn-lg">Train Schedule</a>
     </p>
 {% endblock %}
 

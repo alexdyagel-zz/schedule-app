@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from django.views.generic import ListView
+from django_filters.views import FilterView
 
-from main_app.models import TrainFlight, BusFlight
+from main_app.filters import BusFilter, TrainFilter
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('bus/', ListView.as_view(queryset=BusFlight.objects.all(), template_name='main_app/bus.html')),
-    path('train/', ListView.as_view(queryset=TrainFlight.objects.all(), template_name='main_app/train.html')),
+    path('bus/', FilterView.as_view(filterset_class=BusFilter, template_name='main_app/bus.html'), name="bus"),
+    path('train/',
+         FilterView.as_view(filterset_class=TrainFilter, template_name='main_app/train.html'), name="train")
 ]

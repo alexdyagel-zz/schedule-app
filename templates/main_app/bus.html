@@ -1,4 +1,4 @@
-{% extends "main_app/wrapper.html" %}
+{% extends "main_app/filter_wrapper.html" %}
 
 {% block content %}
     <table class="table">
@@ -18,7 +18,7 @@
         </thead>
 
         <tbody>
-        {% for flight in object_list %}
+        {% for flight in filter.qs %}
 
             <tr>
                 <td>{{ flight.departure_date }}</td>

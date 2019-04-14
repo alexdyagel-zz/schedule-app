@@ -15,6 +15,9 @@ class Flight(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return f'Flight {self.departure_railway} - {self.destination_railway}'
+
 
 class BusFlight(Flight):
     route_number = models.IntegerField()
