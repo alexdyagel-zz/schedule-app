@@ -23,5 +23,10 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('bus/', FilterView.as_view(filterset_class=BusFilter, template_name='main_app/bus.html'), name="bus"),
     path('train/',
-         FilterView.as_view(filterset_class=TrainFilter, template_name='main_app/train.html'), name="train")
+         FilterView.as_view(filterset_class=TrainFilter, template_name='main_app/train.html'), name="train"),
+    path('json-example_bus/', views.json_example_bus, name='json_example'),
+    path('json-example_bus/data/', views.chart_data_bus, name='chart_data'),
+    path('json-example_train/', views.json_example_train, name='json_example'),
+    path('json-example_train/data/', views.chart_data_train, name='chart_data')
+
 ]

@@ -1,39 +1,40 @@
 {% extends "main_app/filter_wrapper.html" %}
 
 {% block content %}
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">departure date</th>
-            <th scope="col">departure time</th>
-            <th scope="col">destination</th>
-            <th scope="col">departure railway</th>
-            <th scope="col">departure platform</th>
-            <th scope="col">destination railway</th>
-            <th scope="col">price (BYN)</th>
-            <th scope="col">route number</th>
-            <th scope="col">bus brand</th>
-            <th scope="col">travel time</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {% for flight in filter.qs %}
-
+    <a href="/json-example_bus" class="btn btn-info">Popular destinations</a>
+        <table class="table">
+            <thead>
             <tr>
-                <td>{{ flight.departure_date }}</td>
-                <td>{{ flight.departure_time }}</td>
-                <td>{{ flight.destination }}</td>
-                <td>{{ flight.departure_railway }}</td>
-                <td>{{ flight.departure_platform }}</td>
-                <td>{{ flight.destination_railway }}</td>
-                <td>{{ flight.price_of_ticket }}</td>
-                <td>{{ flight.route_number }}</td>
-                <td>{{ flight.bus_brand }}</td>
-                <td>{{ flight.travel_time }}</td>
+                <th scope="col">departure date</th>
+                <th scope="col">departure time</th>
+                <th scope="col">destination</th>
+                <th scope="col">departure railway</th>
+                <th scope="col">departure platform</th>
+                <th scope="col">destination railway</th>
+                <th scope="col">price (BYN)</th>
+                <th scope="col">route number</th>
+                <th scope="col">bus brand</th>
+                <th scope="col">travel time</th>
             </tr>
-        {% endfor %}
+            </thead>
 
-        </tbody>
-    </table>
+            <tbody>
+            {% for flight in filter.qs %}
+
+                <tr>
+                    <td>{{ flight.departure_date }}</td>
+                    <td>{{ flight.departure_time }}</td>
+                    <td>{{ flight.destination }}</td>
+                    <td>{{ flight.departure_railway }}</td>
+                    <td>{{ flight.departure_platform }}</td>
+                    <td>{{ flight.destination_railway }}</td>
+                    <td>{{ flight.price_of_ticket }}</td>
+                    <td>{{ flight.route_number }}</td>
+                    <td>{{ flight.bus_brand }}</td>
+                    <td>{{ flight.travel_time }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
 {% endblock %}
